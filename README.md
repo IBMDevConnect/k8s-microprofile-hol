@@ -55,8 +55,8 @@ bx cs init
 
 Let's clone the materials for the lab. First, `cd` to a working directory of your choice. Then jump to a terminal and type in:
 ```
-git clone https://github.com/svennam92/microprofile-hol.git
-cd microprofile-hol
+git clone https://github.com/IBMDevConnect/k8s-microprofile-hol.git
+cd k8s-microprofile-hol
 ```
 
 If this command didn't work, you need to install Git from [here](https://git-scm.com/downloads).
