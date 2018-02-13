@@ -28,8 +28,7 @@ Click the Create Cluster button, choose the "Free" cluster option and give it a 
 
 Install by IBM Cloud (Bluemix) CLI - Find the appropriate installer and follow the instructions [here](https://console.bluemix.net/docs/cli/index.html#downloads).
 
-
-Login to the CLI with `bx login`. When prompted, use the API endpoint associated with the region in which you created the cluster. For example, if you created a cluster on "US South", then you'll use the `api.ng.bluemix.net` endpoint.
+Login to the CLI with `bx login -a <api_endpoint>`. Replace `<api_endpoint>` with the API endpoint associated with the region in which you created the cluster. For example, if you created a cluster on "US South", then you'll use `api.ng.bluemix.net`.
 
 Region | API Endpoint
 --- | ---
@@ -287,6 +286,15 @@ It'll look like this once it's ready:
 Use the public IP of your Kubernetes cluster to access the Web Services Conference Application. You can find the Public IP of your cluster on the [IBM Cloud Containers Dashboard](https://console.bluemix.net/containers-kubernetes/home/clusters). Click your cluster, then click "Worker Nodes" along the leftside. The Public IP is listed by the worker node.
 
 ![Public IP](images/PublicIP.png)
+
+Alternatively, you can also view information about your worker nodes from the command line:
+
+```
+$ bx cs workers <cluster name>
+OK
+ID                                                 Public IP      Private IP       Machine Type   State    Status   Version   
+kube-mel01-pa9cb3b13082654abfa89fa200f96b1044-w1   168.1.148.95   10.118.248.214   free           normal   Ready    1.8.6_1506 
+```
 
 To access your application, navigate to `<PUBLIC_IP>:30056`. Spend a moment to click around and orient yourself with the application.
 
