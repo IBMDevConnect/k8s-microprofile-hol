@@ -115,6 +115,8 @@ Run `bx cs clusters` to see all your clusters in IBM Cloud - there should only b
 
 Run `bx cs cluster-config <cluster_name>` to download the configuration file that allows you to access the cluster. It tells you to run a `export` command. Copy-paste to execute that command.
 
+> Important Note: If you restart your terminal at any time, this exported ENV var goes away causing `kubectl` commands to stop working. This is because `kubectl` doesn't know where your cluster is anymore. You can bypass this by putting the EXPORT command in your terminal startup, such as a `.bash_profile` script. You can also save this `EXPORT` command and run it whenever you launch a new terminal.
+
 Run `kubectl cluster-info` to ensure that you're connected to the running Kubernetes Cluster. You should see something like this:
 
 ```
