@@ -251,7 +251,7 @@ deployment "microservice-webapp-sample" created
 service "webapp-service" created
 ```
 
-After you have created all the services and deployments, you'll have to wait for 5 to 10 minutes. However, you can check the status of your deployment on Kubernetes UI. Run `kubectl proxy` and go to URL 'http://127.0.0.1:8001/ui' to check when the application containers are ready. If it asks you to login, you'll need to enter the token provided in the `cluster-config`.
+After you have created all the services and deployments, you'll have to wait for 5 to 10 minutes. However, you can check the status of your deployment on Kubernetes UI. First, we'll need to get the token from the `cluster-config`.
 
 There's a few ways to get that cluster-config, but here's one way. Let's retreive the token from the existing cluster-config file:
 ```
@@ -271,9 +271,10 @@ $ cat /Users/svennam/.bluemix/plugins/container-service/clusters/my-cluster-sg-1
           ...
           id-token: <COPY_THIS>
           ...
-
-Take id-token value and paste it into your browser with the `Token` option selected to login to the dashboard
 ```
+
+Next, run `kubectl proxy` and go to the URL 'http://127.0.0.1:8001/ui'. When it asks you to login, select the `Token` option and paste the `id-token` you retrieved above. Now you can check the status of your deployments.
+
 
 It'll look like this once it's ready:
 
